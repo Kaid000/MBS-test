@@ -6,10 +6,11 @@ Domain – модели: Cell, Grid, Position, CellType.
 Application – бизнес-логика: DijkstraPathFinder, стратегии стоимости, провайдер соседей.
 Infrastructure – загрузка данных: TextGridLoader.
 Service – консольное приложение для запуска.
+
 Требования
-.NET 6 или выше
-Windows / Linux
+.NET 10
 NUnit и Shouldly для юнит-тестов
+
 Сборка и запуск
 Через Visual Studio
 Открой решение (.sln) в Visual Studio.
