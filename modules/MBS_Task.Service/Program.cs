@@ -47,8 +47,9 @@ namespace MBS_Task
                 writer.WriteLine(shortestPath);
                 return shortestPath;
             }
-            catch
+            catch (Exception ex) 
             {
+                writer.Write(ex.ToString());
                 writer.WriteLine("-1");
                 return -1;
             }

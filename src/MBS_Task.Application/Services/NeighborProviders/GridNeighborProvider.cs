@@ -23,7 +23,7 @@ public class GridNeighborProvider : INeighborProvider
 
             var neighbor = grid.Cells[nx, ny];
             if (neighbor.Type != CellType.Wall)
-                yield return (neighbor.Position, false); // обычный шаг
+                yield return (neighbor.Position, false);
         }
 
         if (currentCell.Type == CellType.Portal && !usedPortals.Contains(currentCell.Raw))
@@ -33,7 +33,7 @@ public class GridNeighborProvider : INeighborProvider
             foreach (var portalPos in grid.Portals[currentCell.Raw])
             {
                 if (!portalPos.Equals(current))
-                    yield return (portalPos, true); // teleport = true
+                    yield return (portalPos, true);
             }
         }
     }

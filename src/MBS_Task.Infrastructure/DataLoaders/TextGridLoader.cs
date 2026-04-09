@@ -54,8 +54,29 @@ namespace MBS_Task.Infrastructure.DataLoaders
                     var cell = new Cell(pos, line[j]);
                     cells[i, j] = cell;
 
-                    if (cell.Type == CellType.Start) start = pos;
-                    if (cell.Type == CellType.End) end = pos;
+                    if (cell.Type == CellType.Start)
+                    {
+                        if (start == null)
+                        {
+                            start = pos;
+                        }
+                        else
+                        {
+                            throw new InvalidDataException($"Некорректные данные: несколько точек старта");
+                        }
+                    }
+
+                    if (cell.Type == CellType.End)
+                    {
+                        if (end == null)
+                        {
+                            end = pos;
+                        }
+                        else
+                        {
+                            throw new InvalidDataException($"Некорректные данные: несколько точек конца");
+                        }
+                    }
 
                     if (cell.Type == CellType.Portal)
                     {
